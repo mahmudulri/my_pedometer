@@ -33,8 +33,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
           final session = _history[index];
           return ListTile(
             title: Text("${session['date']} - ${session['dayname']}"),
-            subtitle: Text(
-                "Steps: ${session['steps']}, Calories: ${session['calories'].toStringAsFixed(2)}, Distance: ${session['distance'].toStringAsFixed(2)} km"),
+            subtitle: Text("Steps: ${session['steps']}, "
+                "Time: ${session['total_time']}, " // ✅ Show walking time
+                "Calories: ${session['calories'].toStringAsFixed(2)}, "
+                "Distance: ${session['distance'].toStringAsFixed(2)} km"),
           );
         },
       ),
